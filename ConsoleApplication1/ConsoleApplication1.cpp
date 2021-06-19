@@ -8264,6 +8264,7 @@
 
 #include <iostream>
 #include <string>
+#include <windows.h>
 
 #include <assert.h>
 using namespace std;
@@ -8364,6 +8365,8 @@ int func(int n) {
 
 int main()
 {
+	//控制台输出
+	OutputDebugString(L"SW12");
 	int arr[] = { 6,9,1,5,8,4,7};
 	int data_size = sizeof(arr) / sizeof(arr[0]);
 	heap_sort(arr, data_size);
