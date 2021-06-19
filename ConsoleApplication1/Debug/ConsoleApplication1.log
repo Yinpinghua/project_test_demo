@@ -1,0 +1,29 @@
+﻿  ConsoleApplication1.cpp
+G:\coding\Wheel\include\wheel\http_server.hpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+  - add -D_WIN32_WINNT=0x0601 to the compiler command line; or
+  - add _WIN32_WINNT=0x0601 to your project's Preprocessor Definitions.
+  Assuming _WIN32_WINNT=0x0601 (i.e. Windows 7 target).
+G:\coding\Wheel\include\wheel\unit.hpp(79,28): warning C4244: “初始化”: 从“std::streamoff”转换到“size_t”，可能丢失数据
+G:\coding\Wheel\include\wheel\unit.hpp(347,23): warning C4018: “<=”: 有符号/无符号不匹配
+G:\coding\Wheel\include\wheel\http_response.hpp(261,23): warning C4018: “<”: 有符号/无符号不匹配
+G:\coding\Wheel\include\wheel\http_request.hpp(336,24): warning C4244: “参数”: 从“__int64”转换到“size_t”，可能丢失数据
+G:\coding\Wheel\include\wheel\io_service_poll.hpp(31,22): warning C4018: “<”: 有符号/无符号不匹配
+G:\coding\Wheel\include\wheel\http_tcp_handle.hpp(283,28): warning C4018: “>”: 有符号/无符号不匹配
+G:\coding\Wheel\include\wheel\http_tcp_handle.hpp(559,70): warning C4244: “参数”: 从“int64_t”转换到“size_t”，可能丢失数据
+  ProxyEngine.cpp
+  Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+  - add -D_WIN32_WINNT=0x0601 to the compiler command line; or
+  - add _WIN32_WINNT=0x0601 to your project's Preprocessor Definitions.
+  Assuming _WIN32_WINNT=0x0601 (i.e. Windows 7 target).
+G:\coding\Wheel\include\wheel\unit.hpp(79,28): warning C4244: “初始化”: 从“std::streamoff”转换到“size_t”，可能丢失数据
+G:\coding\Wheel\include\wheel\unit.hpp(347,23): warning C4018: “<=”: 有符号/无符号不匹配
+G:\coding\Wheel\include\wheel\io_service_poll.hpp(31,22): warning C4018: “<”: 有符号/无符号不匹配
+G:\coding\Wheel\include\wheel\tcp_hanlde.hpp(311,46): warning C4018: “<”: 有符号/无符号不匹配
+G:\coding\Wheel\include\wheel\tcp_hanlde.hpp(336,41): warning C4018: “<”: 有符号/无符号不匹配
+G:\coding\Wheel\include\wheel\websocket_handle.hpp(113,53): warning C4244: “参数”: 从“uint64_t”转换到“size_t”，可能丢失数据
+G:\coding\Wheel\include\wheel\ws_tcp_handle.hpp(334,46): warning C4018: “<”: 有符号/无符号不匹配
+G:\coding\Wheel\include\wheel\ws_tcp_handle.hpp(360,41): warning C4018: “<”: 有符号/无符号不匹配
+G:\coding\Wheel\include\wheel\ws_tcp_handle.hpp(421,83): warning C4244: “参数”: 从“uint64_t”转换到“size_t”，可能丢失数据
+  正在生成代码...
+  ConsoleApplication1.vcxproj -> G:\coding\ConsoleApplication1\Debug\ConsoleApplication1.exe
