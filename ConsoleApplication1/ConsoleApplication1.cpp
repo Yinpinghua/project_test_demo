@@ -8262,126 +8262,165 @@
 //	return w[a][b] + w[b][c] + w[a][c];
 //}
 
+//#include <iostream>
+//#include <string>
+//#include <windows.h>
+//
+//#include <assert.h>
+//using namespace std;
+//
+////create big heap
+//void create_heap(int arr[], int partent_index,int end_index)
+//{
+//	int son_index = (partent_index << 1) + 1;
+//	while (son_index <=end_index){
+//		if (son_index+1<=end_index && 
+//			arr[son_index]<arr[son_index +1]){
+//			son_index++;
+//		}
+//
+//		if (arr[partent_index]>arr[son_index]){
+//			break;
+//		}
+//
+//		arr[son_index]^=arr[partent_index];
+//		arr[partent_index] ^= arr[son_index];
+//		arr[son_index] ^= arr[partent_index];
+//
+//		partent_index = son_index;
+//		son_index = (partent_index << 1) + 1;
+//	}
+//}
+//
+////create small heap
+//void create_heap1(int arr[], int partent_index, int end_index)
+//{
+//	int son_index = (partent_index << 1) + 1;
+//	while (son_index <= end_index) {
+//		if (son_index + 1 <= end_index &&
+//			arr[son_index] > arr[son_index + 1]) {
+//			son_index++;
+//		}
+//
+//		if (arr[partent_index] < arr[son_index]) {
+//			break;
+//		}
+//
+//		arr[son_index] ^= arr[partent_index];
+//		arr[partent_index] ^= arr[son_index];
+//		arr[son_index] ^= arr[partent_index];
+//
+//		partent_index = son_index;
+//		son_index = (partent_index << 1) + 1;
+//	}
+//}
+//
+////create small heap
+//void create_heap2(int arr[], int partent_index, int end_index)
+//{
+//	int son_index = (partent_index << 1) + 1;
+//	while (son_index <= end_index) {
+//		if (son_index + 1 <= end_index &&
+//			arr[son_index] > arr[son_index + 1]) {
+//			son_index++;
+//		}
+//
+//		if (arr[partent_index] < arr[son_index]) {
+//			break;
+//		}
+//
+//		arr[son_index] ^= arr[partent_index];
+//		arr[partent_index] ^= arr[son_index];
+//		arr[son_index] ^= arr[partent_index];
+//
+//		partent_index = son_index;
+//		son_index = (partent_index << 1) + 1;
+//	}
+//}
+//
+//void heap_sort(int arr[], int data_size)
+//{
+//	for (int index=(data_size>>1);index>=0;--index ){
+//		create_heap(arr, index, data_size - 1);
+//		//create_heap1(arr, index, data_size - 1);
+//	}
+//
+//	//for (int index = data_size-1;index >0;--index){
+//	//	arr[0] ^= arr[index];
+//	//	arr[index] ^= arr[0];
+//	//	arr[0] ^= arr[index];
+//	//	create_heap(arr,0,index-1);
+//	//	//create_heap1(arr, 0, index - 1);
+//	//}
+//}
+//
+//int func(int n) {
+//	int i = 0, sum = 0;
+//	while (sum < n) {
+//		sum += ++i;
+//	}
+//	return sum;
+//}
+//
+//
+//int main()
+//{
+//	//控制台输出
+//	OutputDebugString(L"SW12");
+//	int arr[] = { 6,9,1,5,8,4,7};
+//	int data_size = sizeof(arr) / sizeof(arr[0]);
+//	heap_sort(arr, data_size);
+//	int* ptr = nullptr;
+//	assert(ptr != nullptr);
+//	std::cout << *ptr << std::endl;
+//	  
+//	//int x = func(10);
+//	//int a = 0;
+//	//for (;a == 0;a++);
+//	//int b = 0;
+//	//for (;b = 1;b++) {
+//	//	std::cout << "11" << std::endl;
+//	//}
+//
+//	//int data_size = sizeof(arr) / sizeof(arr[0]);
+//	//heap_sort(arr, data_size);
+//}
+
+
 #include <iostream>
+#include <mutex>
 #include <string>
-#include <windows.h>
+std::mutex  cout_mutex;
 
-#include <assert.h>
-using namespace std;
-
-//create big heap
-void create_heap(int arr[], int partent_index,int end_index)
+class A //final
 {
-	int son_index = (partent_index << 1) + 1;
-	while (son_index <=end_index){
-		if (son_index+1<=end_index && 
-			arr[son_index]<arr[son_index +1]){
-			son_index++;
-		}
 
-		if (arr[partent_index]>arr[son_index]){
-			break;
-		}
+};
 
-		arr[son_index]^=arr[partent_index];
-		arr[partent_index] ^= arr[son_index];
-		arr[son_index] ^= arr[partent_index];
-
-		partent_index = son_index;
-		son_index = (partent_index << 1) + 1;
-	}
-}
-
-//create small heap
-void create_heap1(int arr[], int partent_index, int end_index)
+class B :public A
 {
-	int son_index = (partent_index << 1) + 1;
-	while (son_index <= end_index) {
-		if (son_index + 1 <= end_index &&
-			arr[son_index] > arr[son_index + 1]) {
-			son_index++;
-		}
 
-		if (arr[partent_index] < arr[son_index]) {
-			break;
-		}
+};
 
-		arr[son_index] ^= arr[partent_index];
-		arr[partent_index] ^= arr[son_index];
-		arr[son_index] ^= arr[partent_index];
-
-		partent_index = son_index;
-		son_index = (partent_index << 1) + 1;
-	}
-}
-
-//create small heap
-void create_heap2(int arr[], int partent_index, int end_index)
+void thread_func(const std::string& thread_name) 
 {
-	int son_index = (partent_index << 1) + 1;
-	while (son_index <= end_index) {
-		if (son_index + 1 <= end_index &&
-			arr[son_index] > arr[son_index + 1]) {
-			son_index++;
-		}
-
-		if (arr[partent_index] < arr[son_index]) {
-			break;
-		}
-
-		arr[son_index] ^= arr[partent_index];
-		arr[partent_index] ^= arr[son_index];
-		arr[son_index] ^= arr[partent_index];
-
-		partent_index = son_index;
-		son_index = (partent_index << 1) + 1;
-	}
-}
-
-void heap_sort(int arr[], int data_size)
-{
-	for (int index=(data_size>>1);index>=0;--index ){
-		create_heap(arr, index, data_size - 1);
-		//create_heap1(arr, index, data_size - 1);
-	}
-
-	//for (int index = data_size-1;index >0;--index){
-	//	arr[0] ^= arr[index];
-	//	arr[index] ^= arr[0];
-	//	arr[0] ^= arr[index];
-	//	create_heap(arr,0,index-1);
-	//	//create_heap1(arr, 0, index - 1);
+	//for (int i = 0; i < 3; ++i) {
+	//	thread_local int x = 1;
+	//	x++;
+	//	//std::lock_guard<std::mutex> lock(cout_mutex);
+	//	std::cout << "thread[" << thread_name << "]: x = " << x << std::endl;
 	//}
+	//x++;    //编译会出错：error: ‘x’ was not declared in this scope
+	//return;
 }
-
-int func(int n) {
-	int i = 0, sum = 0;
-	while (sum < n) {
-		sum += ++i;
-	}
-	return sum;
-}
-
 
 int main()
 {
-	//控制台输出
-	OutputDebugString(L"SW12");
-	int arr[] = { 6,9,1,5,8,4,7};
-	int data_size = sizeof(arr) / sizeof(arr[0]);
-	heap_sort(arr, data_size);
-	int* ptr = nullptr;
-	assert(ptr != nullptr);
-	std::cout << *ptr << std::endl;
-	  
-	//int x = func(10);
-	//int a = 0;
-	//for (;a == 0;a++);
-	//int b = 0;
-	//for (;b = 1;b++) {
-	//	std::cout << "11" << std::endl;
-	//}
+	//constexpr int num = 20;	//编译可以解决
+	//int arr[num] = {};
+	const int num = 20;	//编译可以解决,加一个const也可以解决
+	int arr[num] = {};
 
-	//int data_size = sizeof(arr) / sizeof(arr[0]);
-	//heap_sort(arr, data_size);
+	std::string str = "123";
+	int a = 10;
 }
