@@ -8394,7 +8394,9 @@ std::mutex  cout_mutex;
 
 class A //final
 {
-
+public:
+	A() = default;
+	~A() = default;
 };
 
 class B :public A
@@ -8414,13 +8416,19 @@ void thread_func(const std::string& thread_name)
 	//return;
 }
 
+//常量表达式函数的定义
+constexpr int display(int x) {
+	return 1 + 2 + x;
+}
+
 int main()
 {
+	int a[display(1)] = { 1,2,3,4 };
 	//constexpr int num = 20;	//编译可以解决
 	//int arr[num] = {};
 	const int num = 20;	//编译可以解决,加一个const也可以解决
 	int arr[num] = {};
 
 	std::string str = "123";
-	int a = 10;
+	int a1 = 10;
 }
